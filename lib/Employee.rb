@@ -46,14 +46,11 @@ class Employee
     end
   end
 
-  # def tax_bracket
-  #   salary_range = @all.map do |salary|
-  #     if salary <= 1000
-  #     end
-  #   end
-  #   salary_range
-  # end
-
+  def tax_bracket
+    Employee.all.select do |person|
+      person.salary <= 1000
+    end
+  end
 
 end
 
