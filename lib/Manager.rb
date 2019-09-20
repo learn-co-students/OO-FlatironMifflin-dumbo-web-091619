@@ -1,5 +1,7 @@
 class Manager
 
+    attr_reader :name, :department, :age
+
     @@all = []
 
     def initialize(name, department, age)
@@ -7,18 +9,6 @@ class Manager
         @department = department
         @age = age
         @@all << self
-    end
-
-    def name
-        @name.to_s
-    end
-
-    def department
-        @department.to_s
-    end
-
-    def age
-        @age.to_i
     end
 
     def self.all

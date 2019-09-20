@@ -1,5 +1,7 @@
 class Employee
 
+    attr_reader :name, :salary, :manager_name
+
     @@all = []
 
     def initialize(name,salary,manager_name)
@@ -7,18 +9,6 @@ class Employee
         @salary = salary
         @manager_name = manager_name
         @@all << self
-    end
-
-    def name
-        @name.to_s
-    end
-
-    def salary
-        @salary.to_s
-    end
-
-    def manager_name
-        @manager_name.to_s
     end
 
     def self.all
@@ -32,11 +22,8 @@ class Employee
     end
 
     def self.find_by_department(department)
-        right_manager = Manager.all.find do |manager|
-            manager.department == department
-        end
         self.all.find do |employee|
-            employee.manager_name == right_manager.name
+            employee.manager_name.department == department
         end
     end
 
