@@ -47,7 +47,7 @@ class Employee
   end
 
   def tax_bracket
-    Employee.all.select do |person|
+    all.select do |person|
       person.salary <= 1000
     end
   end
