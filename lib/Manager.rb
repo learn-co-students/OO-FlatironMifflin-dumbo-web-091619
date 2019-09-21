@@ -23,7 +23,7 @@ class Manager
 
 
     def self.all_departments
-        self.all.select {|dept_name| dept_name.department}
+        self.all.map {|manager| manager.department}
     end
 
     def self.average_age
